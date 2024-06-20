@@ -20,6 +20,6 @@ namespace Questao5.Application.Commands.Requests
         public decimal Value { get; set; }
 
         [Required(ErrorMessage = ErrorMessages.VALUE_REQUIDED)]
-        public Guid IdIdemPotent { get; set; }
+        public Guid IdIdemPotence { get; set; }
     }
 }

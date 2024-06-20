@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 using MediatR;
 using Microsoft.OpenApi.Models;
 using Questao5.Application.Handlers;
@@ -29,6 +30,15 @@ namespace Questao5.Application
                     Version = "v1"
                 });
             });
+            return services;
+        }
+
+        public static IServiceCollection ConfigureControllers(this IServiceCollection services)
+        {
+            services.AddControllers()
+                   .AddJsonOptions(
+            options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
             return services;
         }
     }

@@ -6,7 +6,7 @@ using Questao5.Application.Queries.Requests;
 using Questao5.Application.Queries.Responses;
 using System.ComponentModel;
 
-namespace Questao5.Presentation.Controllers
+namespace Questao5.Infrastructure.Services.Controllers
 {
     [ApiController]
     [Route("Conta-Corrente")]
@@ -24,8 +24,7 @@ namespace Questao5.Presentation.Controllers
         /// <summary>
         /// Obtém saldo da conta corrente
         /// </summary>
-        /// <param name="handler"></param>
-        /// <param name="numero"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("Saldo")]
@@ -45,7 +44,6 @@ namespace Questao5.Presentation.Controllers
         /// <summary>
         /// Gera Movimentação da Conta Corrente
         /// </summary>
-        /// <param name="handler"></param>
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]

@@ -6,16 +6,16 @@ namespace Questao5.Tests.Fixtures.CommandsFixture.Requests
 {
     public class MovimentRequestFixture
     {
-        private readonly MovimentRequest instance;
+        private readonly MovimentRequest _movimentRequest;
         private readonly Faker _faker = new("pt_BR");
         public MovimentRequestFixture()
         {
-            instance = new MovimentRequest()
+            _movimentRequest = new MovimentRequest()
             {
                 Number = _faker.Random.Number(1, 999),
                 MovimentType = MovimentType.Credito,
                 Value = _faker.Random.Decimal(1, 9999),
-                IdIdemPotent = Guid.NewGuid()
+                IdIdemPotence = Guid.NewGuid()
             };
         }
 
@@ -26,7 +26,7 @@ namespace Questao5.Tests.Fixtures.CommandsFixture.Requests
                 Number = _faker.Random.Number(1, 999),
                 MovimentType = MovimentType.Debito,
                 Value = _faker.Random.Decimal(1, 9999),
-                IdIdemPotent = Guid.NewGuid()
+                IdIdemPotence = Guid.NewGuid()
             };
         }
 
@@ -37,10 +37,10 @@ namespace Questao5.Tests.Fixtures.CommandsFixture.Requests
                 Number = _faker.Random.Number(1, 999),
                 MovimentType = MovimentType.Debito,
                 Value = _faker.Random.Decimal(1, 9999),
-                IdIdemPotent = idIdemPotencia
+                IdIdemPotence = idIdemPotencia
             };
         }
 
-        public MovimentRequest Build() => instance;
+        public MovimentRequest New() => _movimentRequest;
     }
 }

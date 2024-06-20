@@ -21,7 +21,7 @@ namespace Questao5.Infrastructure.Repositories.Queries
             _databaseConfig = databaseConfig;
         }
 
-        public async Task<ConsultIdemPotentResponse> ConsultIdemPotentMovimentAsync(ConsultIdemPotentRequest request)
+        public async Task<ConsultIdemPotenceResponse> ConsultIdemPotentMovimentAsync(ConsultIdemPotenceRequest request)
         {
             try
             {
@@ -29,9 +29,9 @@ namespace Questao5.Infrastructure.Repositories.Queries
                 {
                     var idemPotencia = (await connection.QueryAsync<IdemPotencia>(
                         AccountStatements.SQL_SELECT_IDEMPOTENT_BY_KEY,
-                        new { Chave_Idempotencia = request.IdIdemPotent.ToString() })).FirstOrDefault();
+                        new { Chave_Idempotencia = request.IdIdemPotence.ToString() })).FirstOrDefault();
 
-                    ConsultIdemPotentResponse? response = idemPotencia is null ? null : ConsultIdemPotentResponse.ConvertTo(idemPotencia);
+                    ConsultIdemPotenceResponse? response = idemPotencia is null ? null : ConsultIdemPotenceResponse.ConvertTo(idemPotencia);
 
                     return response!;
                 }
@@ -48,12 +48,11 @@ namespace Questao5.Infrastructure.Repositories.Queries
             {
                 using var connection = new SqliteConnection(_databaseConfig.Name);
                 {
-                    var conta = (await connection.QueryAsync<ContaCorrente>(
+                    var account = (await connection.QueryAsync<ContaCorrente>(
                         AccountStatements.SQL_SELECT_ACCOUNT_BY_NUMBER,
                         new { Number = numero.ToString() })).FirstOrDefault();
 
-                    ConsultAccountResponse? response = conta is null ? null : ConsultAccountResponse.ConvertTo(conta);
-
+                    ConsultAccountResponse? response = account is null ? null : ConsultAccountResponse.ConvertTo(account);
                     return response!;
                 }
             }
@@ -74,7 +73,6 @@ namespace Questao5.Infrastructure.Repositories.Queries
                        new { IdAccount = idContaCorrente.ToString() })).FirstOrDefault();
 
                     ConsultAccountResponse? response = conta is null ? null : ConsultAccountResponse.ConvertTo(conta);
-
                     return response!;
                 }
             }

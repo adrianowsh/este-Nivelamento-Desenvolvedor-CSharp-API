@@ -25,7 +25,7 @@ namespace Questao5.Application.Handlers
 
         public async Task<MovimentResponse> Handle(MovimentRequest command)
         {
-            ConsultIdemPotentResponse? idemPotent = await CheckIdemPotent(command);
+            ConsultIdemPotenceResponse? idemPotent = await CheckIdemPotent(command);
             if (idemPotent is not null)
                 return new MovimentResponse() { IdMoviment = idemPotent.IdMovimentProcessed };
 
@@ -44,12 +44,12 @@ namespace Questao5.Application.Handlers
                     Value: command.Value
                 ));
 
-            await AddIdemPotencia(command, account, idMovimento);
+            await AddIdemPotence(command, account, idMovimento);
 
             return new MovimentResponse() { IdMoviment = idMovimento };
         }
 
-        private async Task AddIdemPotencia(MovimentRequest command, ConsultAccountResponse? account, Guid idMovimento)
+        private async Task AddIdemPotence(MovimentRequest command, ConsultAccountResponse? account, Guid idMovimento)
         {
             var requestMovimento = new StringBuilder();
             requestMovimento.Append(account!.IdAccount);
@@ -60,17 +60,17 @@ namespace Questao5.Application.Handlers
             requestMovimento.Append(" | ");
             requestMovimento.Append(DateTime.Now.ToString());
             await _repositoryCommands.AddIdemPotentMovimentAsync(
-                new IdemPotentMovimentRequest
-                {
-                    Chave_IdemPotencia = command.IdIdemPotent,
-                    Request = requestMovimento.ToString(),
-                    Result = idMovimento.ToString()
-                });
+                new IdemPotenceMovimentRequest
+                (
+                    command.IdIdemPotence,
+                    requestMovimento.ToString(),
+                    idMovimento.ToString()
+                )
+            );
         }
-
-        private async Task<ConsultIdemPotentResponse?> CheckIdemPotent(MovimentRequest command)
-        {
-            return await _repositoryQueries.ConsultIdemPotentMovimentAsync(new ConsultIdemPotentRequest { IdIdemPotent = command.IdIdemPotent });
-        }
+        private async Task<ConsultIdemPotenceResponse?> CheckIdemPotent(MovimentRequest command)
+            => await _repositoryQueries.ConsultIdemPotentMovimentAsync(
+                    new ConsultIdemPotenceRequest { IdIdemPotence = command.IdIdemPotence }
+            );
     }
 }

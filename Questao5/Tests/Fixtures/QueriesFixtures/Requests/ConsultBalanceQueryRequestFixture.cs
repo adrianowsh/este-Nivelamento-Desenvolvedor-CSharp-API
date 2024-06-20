@@ -22,6 +22,6 @@ namespace Questao5.Tests.Fixtures.QueriesFixtures.Requests
             };
         }
 
-        public ConsultBalanceQueryRequest Build() => instance;
+        public ConsultBalanceQueryRequest New() => instance;
     }
 }

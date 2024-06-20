@@ -10,23 +10,23 @@ namespace Questao5.Infrastructure.Repositories.Commands
 {
     public sealed class AccountCommandsRepository : IAccountCommandsRepository
     {
-        private readonly DatabaseConfig databaseConfig;
+        private readonly DatabaseConfig _databaseConfig;
 
         public AccountCommandsRepository(DatabaseConfig databaseConfig)
         {
-            this.databaseConfig = databaseConfig;
+            _databaseConfig = databaseConfig;
         }
 
-        public async Task AddIdemPotentMovimentAsync(IdemPotentMovimentRequest request)
+        public async Task AddIdemPotentMovimentAsync(IdemPotenceMovimentRequest request)
         {
             try
             {
-                using var connection = new SqliteConnection(databaseConfig.Name);
+                using var connection = new SqliteConnection(_databaseConfig.Name);
                 {
                     await connection.ExecuteAsync(AccountStatements.SQL_INSERT_IDEMPOTENT_MOVIMENT,
                         new
                         {
-                            Chave_Idempotencia = request.Chave_IdemPotencia.ToString(),
+                            Chave_Idempotencia = request.idempotenceKey.ToString(),
                             Requisicao = request.Request,
                             Resultado = request.Result
                         });
@@ -42,7 +42,7 @@ namespace Questao5.Infrastructure.Repositories.Commands
         {
             try
             {
-                using var connection = new SqliteConnection(databaseConfig.Name);
+                using var connection = new SqliteConnection(_databaseConfig.Name);
                 {
                     var idMoviment = Guid.NewGuid();
                     char movimentType = MovimentTypeConvert.ConvertToChar(request.MovimetType);
@@ -50,9 +50,9 @@ namespace Questao5.Infrastructure.Repositories.Commands
                         new
                         {
                             IdMoviment = idMoviment.ToString(),
-                            IdAccount = request.IdAccount,
+                            request.IdAccount,
                             MovimentType = movimentType,
-                            Value = request.Value
+                            request.Value
                         });
 
                     return idMoviment;

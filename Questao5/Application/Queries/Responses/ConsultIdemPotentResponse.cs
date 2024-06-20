@@ -2,15 +2,15 @@
 
 namespace Questao5.Application.Queries.Responses
 {
-    public class ConsultIdemPotentResponse
+    public class ConsultIdemPotenceResponse
     {
         public Guid IdMovimentProcessed { get; set; }
 
-        public ConsultIdemPotentResponse() { }
+        public ConsultIdemPotenceResponse() { }
 
-        public static ConsultIdemPotentResponse ConvertTo(IdemPotencia idemPotencia)
+        public static ConsultIdemPotenceResponse ConvertTo(IdemPotencia idemPotencia)
         {
-            return new ConsultIdemPotentResponse()
+            return new ConsultIdemPotenceResponse()
             {
                 IdMovimentProcessed = new Guid(idemPotencia.Resultado)
             };

@@ -30,7 +30,7 @@ namespace Questao5.Tests.HandlersTests
         {
             // Arrange
             var mediator = Substitute.For<IMediator>();
-            var comando = new ConsultRequestFixture().Build();
+            var comando = new ConsultRequestFixture().New();
 
             // Act
             await mediator.Send(comando);
@@ -43,14 +43,14 @@ namespace Questao5.Tests.HandlersTests
         public async Task Consult_ReturnConsultBalanceResponse_Success()
         {
             // Arrange
-            var request = new ConsultRequestFixture().Build();
-            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Ativa).Build();
-            var requestConsultaSaldoQuery = new ConsultBalanceQueryRequestFixture(responseConsultaDadosBancarios.IdAccount).Build();
-            var responseConsultaSaldoQuery = new ConsultBalanceQueryResponseFixture().Build();
+            var request = new ConsultRequestFixture().New();
+            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Ativa).New();
+            var requestConsultaSaldoQuery = new ConsultBalanceQueryRequestFixture(responseConsultaDadosBancarios.IdAccount).New();
+            var responseConsultaSaldoQuery = new ConsultBalanceQueryResponseFixture().New();
             var response = new ConsultBalanceResponseFixture(
                 responseConsultaDadosBancarios.Number,
                 responseConsultaDadosBancarios.Name,
-                responseConsultaSaldoQuery.ValueBalance).Build();
+                responseConsultaSaldoQuery.ValueBalance).New();
 
             _repositoryMock.ConsultAccountAsync(request.Number).Returns(responseConsultaDadosBancarios);
             _repositoryMock.ConsultBalanceAsync(Arg.Any<ConsultBalanceQueryRequest>()).Returns(responseConsultaSaldoQuery);
@@ -68,10 +68,10 @@ namespace Questao5.Tests.HandlersTests
         public async Task Consult_Return_InactveAccount()
         {
             // Arrange
-            var request = new ConsultRequestFixture().Build();
-            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Inativa).Build();
+            var request = new ConsultRequestFixture().New();
+            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Inativa).New();
             var erroMessage = ErrorMessages.INACTIVE_ACCOUNT_CONSULT;
-            var response = new ConsultBalanceResponseFixture(erroMessage).Build();
+            var response = new ConsultBalanceResponseFixture(erroMessage).New();
 
             _repositoryMock.ConsultAccountAsync(request.Number).Returns(responseConsultaDadosBancarios);
 
@@ -86,9 +86,9 @@ namespace Questao5.Tests.HandlersTests
         public async Task Consult_Return_InvalidAccount()
         {
             // Arrange
-            var request = new ConsultRequestFixture().Build();
+            var request = new ConsultRequestFixture().New();
             var erroMessage = ErrorMessages.INVALID_ACCOUNT_CONSULT;
-            var response = new ConsultBalanceResponseFixture(erroMessage).Build();
+            var response = new ConsultBalanceResponseFixture(erroMessage).New();
 
             _repositoryMock.ConsultAccountAsync(request.Number).ReturnsNull();
 
@@ -103,10 +103,10 @@ namespace Questao5.Tests.HandlersTests
         public async Task Consult_Return_ErrorConsult()
         {
             // Arrange
-            var request = new ConsultRequestFixture().Build();
-            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Ativa).Build();
+            var request = new ConsultRequestFixture().New();
+            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Ativa).New();
             var erroMessage = ErrorMessages.ERROR_CONSULT;
-            var response = new ConsultBalanceResponseFixture(erroMessage).Build();
+            var response = new ConsultBalanceResponseFixture(erroMessage).New();
 
             _repositoryMock.ConsultAccountAsync(request.Number).Returns(responseConsultaDadosBancarios);
             _repositoryMock.ConsultBalanceAsync(Arg.Any<ConsultBalanceQueryRequest>()).ReturnsNull();

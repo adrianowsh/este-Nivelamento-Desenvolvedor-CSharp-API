@@ -5,16 +5,16 @@ namespace Questao5.Tests.Fixtures.QueriesFixture.Responses
 {
     public class ConsultBalanceQueryResponseFixture
     {
-        private readonly ConsultBalanceQueryResponse instance;
+        private readonly ConsultBalanceQueryResponse _consultBalanceQueryResponse;
         private readonly Faker _faker = new("pt_BR");
 
         public ConsultBalanceQueryResponseFixture()
         {
-            instance = new ConsultBalanceQueryResponse(
+            _consultBalanceQueryResponse = new ConsultBalanceQueryResponse(
                 _faker.Random.Decimal(1, 9999.99m)
             );
         }
 
-        public ConsultBalanceQueryResponse Build() => instance;
+        public ConsultBalanceQueryResponse New() => _consultBalanceQueryResponse;
     }
 }

@@ -4,11 +4,11 @@ namespace Questao5.Tests.Fixtures.CommandsBuilders.Responses
 {
     public class MovimentResponseFixture
     {
-        private readonly MovimentResponse instance;
+        private readonly MovimentResponse _movimentResponse;
 
         public MovimentResponseFixture()
         {
-            instance = new MovimentResponse()
+            _movimentResponse = new MovimentResponse()
             {
                 IdMoviment = Guid.NewGuid()
             };
@@ -16,7 +16,7 @@ namespace Questao5.Tests.Fixtures.CommandsBuilders.Responses
 
         public MovimentResponseFixture(Guid id)
         {
-            instance = new MovimentResponse()
+            _movimentResponse = new MovimentResponse()
             {
                 IdMoviment = id
             };
@@ -24,12 +24,12 @@ namespace Questao5.Tests.Fixtures.CommandsBuilders.Responses
 
         public MovimentResponseFixture(string erroMessage)
         {
-            instance = new MovimentResponse()
+            _movimentResponse = new MovimentResponse()
             {
                 ErrorMessage = erroMessage
             };
         }
 
-        public MovimentResponse Build() => instance;
+        public MovimentResponse New() => _movimentResponse;
     }
 }

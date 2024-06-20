@@ -6,12 +6,12 @@ namespace Questao5.Tests.Fixtures.CommandsFixture.Requests
 {
     public sealed class MovimentAccountCommandRequestFixture
     {
-        private readonly MovimentAccountCommandRequest instance;
+        private readonly MovimentAccountCommandRequest _movimentAccountCommandRequest;
         private readonly Faker _faker = new("pt_BR");
 
         public MovimentAccountCommandRequestFixture()
         {
-            instance = new MovimentAccountCommandRequest(
+            _movimentAccountCommandRequest = new MovimentAccountCommandRequest(
                  Guid.NewGuid(),
                  MovimentType.Credito,
                 _faker.Random.Decimal(1, (decimal)9999.99)
@@ -20,7 +20,7 @@ namespace Questao5.Tests.Fixtures.CommandsFixture.Requests
 
         public MovimentAccountCommandRequestFixture(Guid idContaCorrente, MovimentType tipoMovimento)
         {
-            instance = new MovimentAccountCommandRequest(
+            _movimentAccountCommandRequest = new MovimentAccountCommandRequest(
 
                 idContaCorrente,
                 tipoMovimento,
@@ -28,6 +28,6 @@ namespace Questao5.Tests.Fixtures.CommandsFixture.Requests
             );
         }
 
-        public MovimentAccountCommandRequest Buid() => instance;
+        public MovimentAccountCommandRequest New() => _movimentAccountCommandRequest;
     }
 }

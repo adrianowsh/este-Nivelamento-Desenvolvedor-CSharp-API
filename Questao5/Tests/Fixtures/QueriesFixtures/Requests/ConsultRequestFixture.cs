@@ -5,17 +5,17 @@ namespace Questao5.Tests.Fixture.QueriesFixtures.Requests
 {
     public sealed class ConsultRequestFixture
     {
-        private readonly ConsultRequest instance;
+        private readonly ConsultRequest _consultRequest;
         private readonly Faker _faker = new("pt_BR");
 
         public ConsultRequestFixture()
         {
-            instance = new ConsultRequest()
+            _consultRequest = new ConsultRequest()
             {
                 Number = _faker.Random.Number(0, 999)
             };
         }
 
-        public ConsultRequest Build() => instance;
+        public ConsultRequest New() => _consultRequest;
     }
 }

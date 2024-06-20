@@ -1,7 +1,7 @@
 ﻿namespace Questao5.Application.Queries.Requests
 {
-    public class ConsultIdemPotentRequest
+    public sealed class ConsultIdemPotenceRequest
     {
-        public Guid IdIdemPotent { get; set; }
+        public Guid IdIdemPotence { get; set; }
     }
 }

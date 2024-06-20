@@ -34,7 +34,7 @@ namespace Questao5.Tests.HandlersTests
         {
             // Arrange
             var mediator = Substitute.For<IMediator>();
-            var comando = new MovimentRequestFixture().Build();
+            var comando = new MovimentRequestFixture().New();
 
             // Act
             await mediator.Send(comando);
@@ -47,13 +47,13 @@ namespace Questao5.Tests.HandlersTests
         public async Task MovimentAccount_Return_Success()
         {
             // Arrange
-            var request = new MovimentRequestFixture().Build();
-            var requestIdemPotencia = new ConsultIdemPotentRequestFixture().Build();
-            var responseIdemPotencia = new ConsultIdemPotentResponseFixture().Build();
-            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Ativa).Build();
-            var requestMovimentarContaCommand = new MovimentAccountCommandRequestFixture().Buid();
+            var request = new MovimentRequestFixture().New();
+            var requestIdemPotencia = new ConsultIdemPotenceRequestFixture().New();
+            var responseIdemPotencia = new ConsultIdemPotenceResponseFixture().New();
+            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Ativa).New();
+            var requestMovimentarContaCommand = new MovimentAccountCommandRequestFixture().New();
             var responseGuid = Guid.NewGuid();
-            var responseMovimentacaoConta = new MovimentResponseFixture(responseGuid).Build();
+            var responseMovimentacaoConta = new MovimentResponseFixture(responseGuid).New();
 
             _repositoryQueriesMock.ConsultIdemPotentMovimentAsync(requestIdemPotencia).ReturnsNull();
             _repositoryQueriesMock.ConsultAccountAsync(request.Number).Returns(responseConsultaDadosBancarios);
@@ -70,13 +70,13 @@ namespace Questao5.Tests.HandlersTests
         public async Task MovimentAccount_Return_IdemPotent()
         {
             // Arrange
-            var request = new MovimentRequestFixture().Build();
-            var requestIdemPotencia = new ConsultIdemPotentRequestFixture(request.IdIdemPotent).Build();
-            var responseIdemPotencia = new ConsultIdemPotentResponseFixture().Build();
+            var request = new MovimentRequestFixture().New();
+            var requestIdemPotencia = new ConsultIdemPotenceRequestFixture(request.IdIdemPotence).New();
+            var responseIdemPotencia = new ConsultIdemPotenceResponseFixture().New();
 
-            var responseMovimentacaoConta = new MovimentResponseFixture(responseIdemPotencia.IdMovimentProcessed).Build();
+            var responseMovimentacaoConta = new MovimentResponseFixture(responseIdemPotencia.IdMovimentProcessed).New();
 
-            _repositoryQueriesMock.ConsultIdemPotentMovimentAsync(Arg.Any<ConsultIdemPotentRequest>()).Returns(responseIdemPotencia);
+            _repositoryQueriesMock.ConsultIdemPotentMovimentAsync(Arg.Any<ConsultIdemPotenceRequest>()).Returns(responseIdemPotencia);
 
             // Act
             var handleResult = await _handlerMock.Handle(request);
@@ -89,11 +89,11 @@ namespace Questao5.Tests.HandlersTests
         public async Task MovimentAccount_Return_ErrorInvalidAccount()
         {
             // Arrange
-            var request = new MovimentRequestFixture().Build();
-            var requestIdemPotencia = new ConsultIdemPotentRequestFixture().Build();
-            var responseIdemPotencia = new ConsultIdemPotentResponseFixture().Build();
+            var request = new MovimentRequestFixture().New();
+            var requestIdemPotencia = new ConsultIdemPotenceRequestFixture().New();
+            var responseIdemPotencia = new ConsultIdemPotenceResponseFixture().New();
             var erroMessage = ErrorMessages.INVALID_ACCOUNT_MOVEMENT;
-            var responseMovimentacaoConta = new MovimentResponseFixture(erroMessage).Build();
+            var responseMovimentacaoConta = new MovimentResponseFixture(erroMessage).New();
 
             _repositoryQueriesMock.ConsultIdemPotentMovimentAsync(requestIdemPotencia).Returns(responseIdemPotencia);
             _repositoryQueriesMock.ConsultAccountAsync(request.Number).ReturnsNull();
@@ -109,12 +109,12 @@ namespace Questao5.Tests.HandlersTests
         public async Task MovimentAccount_Return_ErrorInactiveAccount()
         {
             // Arrange
-            var request = new MovimentRequestFixture().Build();
-            var requestIdemPotencia = new ConsultIdemPotentRequestFixture().Build();
-            var responseIdemPotencia = new ConsultIdemPotentResponseFixture().Build();
-            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Inativa).Build();
+            var request = new MovimentRequestFixture().New();
+            var requestIdemPotencia = new ConsultIdemPotenceRequestFixture().New();
+            var responseIdemPotencia = new ConsultIdemPotenceResponseFixture().New();
+            var responseConsultaDadosBancarios = new ConsultAccountResponseFixture(request.Number, AccountSituation.Inativa).New();
             var erroMessage = ErrorMessages.INACTIVE_ACCOUNT_MOVIMENT;
-            var responseMovimentacaoConta = new MovimentResponseFixture(erroMessage).Build();
+            var responseMovimentacaoConta = new MovimentResponseFixture(erroMessage).New();
 
             _repositoryQueriesMock.ConsultIdemPotentMovimentAsync(requestIdemPotencia).Returns(responseIdemPotencia);
             _repositoryQueriesMock.ConsultAccountAsync(request.Number).Returns(responseConsultaDadosBancarios);

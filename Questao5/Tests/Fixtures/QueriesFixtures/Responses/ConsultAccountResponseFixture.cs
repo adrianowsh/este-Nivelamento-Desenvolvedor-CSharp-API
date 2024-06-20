@@ -6,12 +6,12 @@ namespace Questao5.Tests.Fixtures.QueriesFixture.Responses
 {
     public class ConsultAccountResponseFixture
     {
-        private readonly ConsultAccountResponse instance;
+        private readonly ConsultAccountResponse _consultAccountResponse;
         private readonly Faker _faker = new("pt_BR");
 
         public ConsultAccountResponseFixture()
         {
-            instance = new()
+            _consultAccountResponse = new()
             {
                 Number = _faker.Random.Number(1, 999),
                 Name = _faker.Person.FullName,
@@ -22,7 +22,7 @@ namespace Questao5.Tests.Fixtures.QueriesFixture.Responses
 
         public ConsultAccountResponseFixture(int numero, AccountSituation situacaoConta)
         {
-            instance = new()
+            _consultAccountResponse = new()
             {
                 Number = numero,
                 Name = _faker.Person.FullName,
@@ -30,6 +30,6 @@ namespace Questao5.Tests.Fixtures.QueriesFixture.Responses
                 IdAccount = Guid.NewGuid()
             };
         }
-        public ConsultAccountResponse Build() => instance;
+        public ConsultAccountResponse New() => _consultAccountResponse;
     }
 }

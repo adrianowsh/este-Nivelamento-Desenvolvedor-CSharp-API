@@ -5,12 +5,12 @@ namespace Questao5.Tests.Fixtures.QueriesFixtures.Responses
 {
     public sealed class ConsultBalanceResponseFixture
     {
-        private readonly ConsultBalanceResponse instance;
+        private readonly ConsultBalanceResponse _consultBalanceResponse;
         private readonly Faker _faker = new("pt_BR");
 
         public ConsultBalanceResponseFixture()
         {
-            instance = new ConsultBalanceResponse()
+            _consultBalanceResponse = new ConsultBalanceResponse()
             {
                 Number = _faker.Random.Number(1, 999).ToString(),
                 Name = _faker.Person.FullName,
@@ -21,7 +21,7 @@ namespace Questao5.Tests.Fixtures.QueriesFixtures.Responses
 
         public ConsultBalanceResponseFixture(int number, string nome, decimal valorSaldo)
         {
-            instance = new ConsultBalanceResponse()
+            _consultBalanceResponse = new ConsultBalanceResponse()
             {
                 Number = number.ToString(),
                 Name = nome,
@@ -32,12 +32,11 @@ namespace Questao5.Tests.Fixtures.QueriesFixtures.Responses
 
         public ConsultBalanceResponseFixture(string errorMessage)
         {
-            instance = new ConsultBalanceResponse()
+            _consultBalanceResponse = new ConsultBalanceResponse()
             {
                 ErrorMessage = errorMessage
             };
         }
-
-        public ConsultBalanceResponse Build() => instance;
+        public ConsultBalanceResponse New() => _consultBalanceResponse;
     }
 }

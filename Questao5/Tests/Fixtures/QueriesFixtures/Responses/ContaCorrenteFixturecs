@@ -6,12 +6,12 @@ namespace Questao5.Tests.Fixtures.QueriesFixtures.Responses
 {
     public sealed class ContaCorrenteFixture
     {
-        private readonly ContaCorrente instance;
+        private readonly ContaCorrente _contaCorrente;
         private readonly Faker _faker = new("pt_BR");
 
         public ContaCorrenteFixture()
         {
-            instance = new ContaCorrente()
+            _contaCorrente = new ContaCorrente()
             {
                 Numero = _faker.Random.Number(1, 999).ToString(),
                 Nome = _faker.Person.FullName,
@@ -30,7 +30,6 @@ namespace Questao5.Tests.Fixtures.QueriesFixtures.Responses
                 IdContaCorrente = Guid.NewGuid().ToString()
             };
         }
-
-        public ContaCorrente Buid() => instance;
+        public ContaCorrente New() => _contaCorrente;
     }
 }

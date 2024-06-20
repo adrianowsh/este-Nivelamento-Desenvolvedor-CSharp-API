@@ -10,7 +10,7 @@ namespace Questao5.Infrastructure.Repositories.Queries
         Task<ConsultAccountResponse> ConsultAccountAsync(int numero);
         Task<ConsultAccountResponse> ConsultAccountAsync(Guid idContaCorrente);
         Task<ConsultBalanceQueryResponse> ConsultBalanceAsync(ConsultBalanceQueryRequest request);
-        Task<ConsultIdemPotentResponse> ConsultIdemPotentMovimentAsync(ConsultIdemPotentRequest request);
+        Task<ConsultIdemPotenceResponse> ConsultIdemPotentMovimentAsync(ConsultIdemPotenceRequest request);
 
     }
 }
