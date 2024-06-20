@@ -1,0 +1,135 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/Questao5.csproj": {}
+  },
+  "projects": {
+    "/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/Questao5.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/Questao5.csproj",
+        "projectName": "Questao5",
+        "projectPath": "/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/Questao5.csproj",
+        "packagesPath": "/home/adriano/.nuget/packages/",
+        "outputPath": "/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/adriano/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.5.1, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.CodeCoverage": {
+              "target": "Package",
+              "version": "[17.10.0, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.TestPlatform": {
+              "target": "Package",
+              "version": "[17.10.0, )"
+            },
+            "Microsoft.TestPlatform.AdapterUtilities": {
+              "target": "Package",
+              "version": "[17.10.0, )"
+            },
+            "Microsoft.TestPlatform.TestHost": {
+              "target": "Package",
+              "version": "[17.10.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/adriano/.asdf/installs/dotnet-core/8.0.302/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

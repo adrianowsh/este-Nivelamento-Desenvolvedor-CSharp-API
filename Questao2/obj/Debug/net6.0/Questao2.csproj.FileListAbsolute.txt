@@ -1,0 +1,17 @@
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/bin/Debug/net6.0/Questao2
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/bin/Debug/net6.0/Questao2.deps.json
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/bin/Debug/net6.0/Questao2.runtimeconfig.json
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/bin/Debug/net6.0/Questao2.dll
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/bin/Debug/net6.0/Questao2.pdb
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.csproj.AssemblyReference.cache
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.GeneratedMSBuildEditorConfig.editorconfig
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.AssemblyInfoInputs.cache
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.AssemblyInfo.cs
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.csproj.CoreCompileInputs.cache
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.csproj.CopyComplete
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.dll
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/refint/Questao2.dll
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.pdb
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/Questao2.genruntimeconfig.cache
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/obj/Debug/net6.0/ref/Questao2.dll

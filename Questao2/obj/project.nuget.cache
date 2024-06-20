@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "X/d0za0c9tU0KqDiHaz6sL4KeADnt9Mo+z8ZnZtOkk82smMYgtAusxuirL9glZ3K4HGqWCqznnffNiYWs2VHWA==",
+  "success": true,
+  "projectFilePath": "/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao2/Questao2.csproj",
+  "expectedPackageFiles": [
+    "/home/adriano/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
