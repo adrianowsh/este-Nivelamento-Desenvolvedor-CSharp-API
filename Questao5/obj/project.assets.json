@@ -8039,6 +8039,7 @@
         "net8.0"
       ],
       "sources": {
+        "/home/adriano/dotnet/packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

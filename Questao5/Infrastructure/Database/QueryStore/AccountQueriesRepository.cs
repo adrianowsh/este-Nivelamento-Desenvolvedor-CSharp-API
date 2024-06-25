@@ -4,10 +4,10 @@ using Questao5.Application.Queries.Requests;
 using Questao5.Application.Queries.Responses;
 using Questao5.Domain.Entities;
 using Questao5.Domain.Enumerators;
+using Questao5.Domain.Services;
 using Questao5.Infrastructure.Database.QueryStore.Requests;
 using Questao5.Infrastructure.Database.QueryStore.Responses;
 using Questao5.Infrastructure.Database.SqlStatements;
-using Questao5.Infrastructure.Services;
 using Questao5.Infrastructure.Sqlite;
 
 namespace Questao5.Infrastructure.Repositories.Queries

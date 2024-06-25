@@ -312,3 +312,4 @@
 /home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/bin/Debug/net8.0/SQLitePCLRaw.provider.dynamic_cdecl.dll
 /home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/bin/Debug/net8.0/runtimes/alpine-x64/native/libe_sqlite3.so
 /home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/obj/Debug/net8.0/Questao5.xml
+/home/adriano/Downloads/Teste-Nivelamento-Desenvolvedor-CSharp-API-v3 8/Questao5/obj/Debug/net8.0/Questao5.sourcelink.json

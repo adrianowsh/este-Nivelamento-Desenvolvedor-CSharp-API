@@ -2,14 +2,13 @@
 using Questao5.Domain.Entities;
 using Questao5.Domain.Enumerators;
 
-namespace Questao5.Infrastructure.Services
+namespace Questao5.Domain.Services
 {
     public static class AccountServices
     {
-        public static decimal SumMoviments(List<Movimento> moviments, MovimentType movimentType)
+        public static decimal SumMoviments(IList<Movimento> moviments, MovimentType movimentType)
         {
-            char movimentTypeChar = MovimentTypeConvert.ConvertToChar(movimentType);
-
+            var movimentTypeChar = MovimentTypeConvert.ConvertToChar(movimentType);
             return moviments.Where(x => x.TipoMovimento == movimentTypeChar.ToString()).Sum(x => x.Valor);
         }
     }
